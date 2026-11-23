@@ -375,7 +375,7 @@ p{margin:0}
           why('Your phone number helps us provide accurate and faster quotes.') + TEST_NOTE + field('phone', 'Phone number (optional)', '(000) 000-0000', { type: 'tel', mode: 'tel', ac: 'tel' }) +
           cont('See my matches') + btn('Continue without a phone number', 'blue tall', 'skip-phone') + '<p class="legal">' + CONSENT_PHONE + '</p>';
       case 'end':
-        return DONE + '<h1>That is the end of the test.</h1><p>In the real form, your matches would show here.</p><p>Nothing you entered here was saved or sent.</p>' +
+        return DONE + '<h1>That is the end of this form.</h1><p><b>Please go back to your test instructions and continue with the next task.</b></p><p>In the real form, your matches would show here. Nothing you entered was saved or sent.</p>' +
           '<button type="button" class="again" data-act="again">Start again</button>' + S.debugBlock();
     }
     return '';
