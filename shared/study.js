@@ -119,7 +119,6 @@
   };
   S.back = function (step, how) {
     S.log('back control', how);
-    if (idx > 0 && trail[idx - 1] === step) { history.back(); return; }
     S.go(step, 'back');
   };
 
