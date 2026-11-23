@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Auto Insurance | U.S. News</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;color:#1A1D26;background:#fff;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+button,input,select{font-family:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #1263D3;outline-offset:2px}
+.page{min-height:100vh;display:flex;flex-direction:column}
+
+
+.hdr{display:flex;align-items:center;min-height:62px;padding:7px 0 7px 16px}
+.hdr img{flex:none;width:118px;height:30px}
+.hdr i{flex:none;width:1px;height:44px;margin:0 4px 0 8px;background:rgba(0,0,0,.12)}
+.hdr p{margin:0;font-size:16px;line-height:24px;color:#2C303C}
+
+
+.band{padding:16px;background:#F4F7F9}
+.band-in{max-width:1008px;margin:0 auto}
+.sav{margin:0 0 16px;font-family:Montserrat,"Helvetica Neue",Helvetica,sans-serif;font-weight:600;font-size:18px;line-height:23.94px;color:#1263D3;text-align:center}
+.track{height:8px;margin-bottom:16px;border-radius:4px;background:#D3D7DC;overflow:hidden}
+.fill{height:8px;border-radius:5px;background:#24BB80;transition:width .4s linear}
+.pct{margin:0;font-size:16px;line-height:24px;text-align:center}
+
+
+.main{flex:1 0 auto;width:100%;max-width:1056px;margin:0 auto;padding:32px 24px 0}
+.q{margin:0;font-family:Montserrat,"Helvetica Neue",Helvetica,sans-serif;font-weight:600;font-size:32px;line-height:40px;color:#2C303C;text-align:center}
+.kick{margin:0 0 16px;font-size:18px;line-height:24px;font-weight:700;color:#1263D3;text-align:center}
+
+.tile{display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0;padding:16px;background:#F4F7F9;border:1px solid #D3D7DC;border-radius:4px;color:#2C303C;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.sel{border-color:#1263D3 !important;box-shadow:0 3px 3px -2px rgba(81,87,103,.2),0 3px 4px 0 rgba(81,87,103,.14),0 1px 8px 0 rgba(81,87,103,.12)}
+
+
+.veh{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:48px;padding:0 8px}
+.veh .tile{flex:1 1 0;max-width:160px;min-height:97px}
+.veh.three .tile{flex:0 0 calc(50% - 8px);min-height:92px;padding:12px 8px}
+.veh.three span{font-size:14px;line-height:18px}
+.veh img{width:48px;height:39px;object-fit:contain}
+.veh span{font-size:16px;line-height:24px;font-weight:500;text-align:center}
+.info{display:flex;gap:12px;margin:32px auto 0;padding:6px 16px;background:#F7FBFE;border-left:2px solid #1263D3;border-radius:0 4px 4px 0;color:#465864}
+.info svg{flex:none;width:22px;height:22px;margin-top:7px;fill:#6AB4F4}
+.info b{display:block;margin:6px 0 5px;font-weight:500}
+.info p{margin:0 0 9px}
+
+
+.makes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:32px;padding:0 16px}
+.makes .tile{height:92px}
+.makes img{width:100%;height:100%;object-fit:contain}
+.makes .noimg{font-size:17px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.makes .txt{font-size:16px;font-weight:500}
+
+
+.opts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:100%;max-width:568px;margin:40px auto 0;padding:0 16px}
+.opts.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opt{display:flex;align-items:center;justify-content:center;height:48px;margin:0;padding:0 21px;background:#F4F7F9;border:1px solid #D3D7DC;border-radius:4px;font-size:15px;line-height:18px;font-weight:500;color:#2C303C;text-align:center;cursor:pointer;-webkit-tap-highlight-color:transparent}
+
+
+.list{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin:40px auto 0;padding:0 16px;max-width:600px}
+.list .opt{flex:0 0 100%}
+
+
+.combo-wrap{width:100%;max-width:568px;margin:24px auto 0;padding:0 16px}
+.combo-wrap.after-makes{margin-top:30px}
+.combo{position:relative;display:block;width:100%;height:56px;padding:16.5px 32px 16.5px 14px;background:#fff;border:1px solid rgba(0,0,0,.23);border-radius:4px;font-size:16px;line-height:23px;color:#2C303C;text-align:center;cursor:pointer}
+@media (hover:hover){.combo:hover{border-color:#2C303C}}
+.combo .lbl{position:absolute;left:14px;top:16px;color:#515767;pointer-events:none}
+.combo.has .lbl,.combo.open .lbl{left:9px;top:-9px;padding:0 5px;background:#fff;font-size:12px;line-height:18px}
+.combo.open{border:2px solid #1263D3;padding:15.5px 31px 15.5px 13px}
+.combo.open .lbl{left:8px;top:-10px;color:#1263D3}
+.combo svg{position:absolute;right:7px;top:50%;width:24px;height:24px;margin-top:-12px;fill:rgba(0,0,0,.54);pointer-events:none}
+.combo.open svg{transform:rotate(180deg)}
+
+.menu-back{position:fixed;top:0;right:0;bottom:0;left:0;z-index:50}
+.menu{position:fixed;z-index:51;padding:8px 0;background:#fff;border-radius:4px;box-shadow:0 5px 5px -3px rgba(81,87,103,.2),0 8px 10px 1px rgba(81,87,103,.14),0 3px 14px 2px rgba(81,87,103,.12);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.menu button{display:block;width:100%;min-height:48px;margin:0;padding:6px 16px;background:none;border:0;font-size:16px;line-height:24px;font-weight:500;color:#2C303C;text-align:left;white-space:nowrap;cursor:pointer}
+@media (hover:hover){.menu button:hover{background:rgba(0,0,0,.04)}}
+.menu button.cur{background:rgba(18,99,211,.08)}
+
+
+.form{display:flex;flex-direction:column;gap:16px;width:100%;max-width:584px;margin:40px auto 0;padding:0 8px}
+.frow{display:flex;gap:16px}
+.fld{flex:1 1 0;min-width:0}
+.fld input,.fld select{width:100%;height:56px;padding:16.5px 14px;border:1px solid rgba(0,0,0,.23);border-radius:4px;background:#fff;font-size:16px;color:#2C303C}
+.fld select{appearance:none;-webkit-appearance:none}
+.fld select.empty{color:#515767}
+.fld input::placeholder{color:#515767;opacity:1}
+.fld input:focus,.fld select:focus{border:2px solid #1263D3;padding:15.5px 13px;outline:none}
+.test{margin:0;padding:10px 14px;border-radius:4px;background:#FFF6E0;border:1px solid #E8C56A;font-size:14px;line-height:20px;color:#5C4400}
+.go{display:flex;align-items:center;justify-content:center;width:100%;height:40px;margin:0;padding:6px 16px;border:0;border-radius:4px;background:#1263D3;font-size:16px;font-weight:500;color:#fff;cursor:pointer}
+.decline{align-self:center;margin:0;padding:6px 8px;border:0;background:none;font-size:16px;font-weight:500;color:#1263D3;cursor:pointer}
+.legal{margin:0;font-size:12px;line-height:18px;color:#515767}
+
+
+.nav{display:flex;justify-content:space-between;margin-top:48px}
+.opts + .nav{margin-top:56px}
+.after-makes + .nav{margin-top:57px}
+.nav button{display:inline-flex;align-items:center;height:40px;margin:0;padding:6px 8px;background:none;border:0;border-radius:4px;font-size:16px;line-height:28px;font-weight:500;color:#515767;cursor:pointer}
+.nav button:disabled{color:rgba(44,48,60,.38);cursor:default}
+.nav svg{width:20px;height:20px;fill:currentColor}
+.nav .prev svg{margin:0 8px 0 -4px}
+.nav .next svg{margin:0 -4px 0 8px}
+
+
+.prov{margin-top:16px;text-align:center}
+.prov p{margin:0;font-weight:700;color:#9297A1}
+.prov .logos{display:flex;flex-direction:column;gap:16px;margin:32px 0}
+.prov img{width:100%;height:50px;object-fit:contain}
+.prov img.tall{height:85px}
+
+.ftr{margin-top:32px;padding:32px 32px 44px;background:#1A1D26;font-size:12px;line-height:18px;color:#D3D7DC;text-align:center}
+.ftr img{display:block;width:118px;height:30px;margin:0 auto 32px}
+.ftr span{color:#fff}
+
+
+.done{max-width:568px;margin:16px auto 0;text-align:center}
+.done svg{display:block;margin:0 auto 16px}
+.done p{margin:16px 0 0;font-size:16px;line-height:24px;color:#2C303C}
+.done button{margin:24px 0 0;padding:6px 8px;height:40px;background:none;border:0;border-radius:4px;font-size:16px;line-height:28px;font-weight:500;color:#1263D3;cursor:pointer}
+
+@media (min-width:600px){
+  .hdr i{height:20px}
+  .sav{font-size:32px;line-height:40px}
+  .q.big{font-size:42px;line-height:47.88px}
+  .veh .tile{flex:0 0 160px;min-height:100px}
+  .veh.three .tile{flex:0 0 160px;height:100px;min-height:0}
+  .makes.ins{transform:none}
+  .veh img{height:42px}
+  .info{max-width:360px}
+  .makes{grid-template-columns:repeat(2,160px);column-gap:84px;justify-content:center;padding:0;transform:translateX(-8px)}
+  .makes .tile{height:100px}
+  .opts,.opts.two{grid-template-columns:repeat(3,minmax(0,1fr));padding:0}
+  .list .opt{flex:0 0 276px}
+  .combo-wrap{max-width:464px;padding:0}
+  .combo-wrap.after-makes{margin-top:40px}
+  .after-makes + .nav{margin-top:48px}
+  .menu button{min-height:36px}
+  .form{padding:0}
+  .prov{display:flex;align-items:center;text-align:left}
+  .prov .logos{flex:1 1 0;flex-direction:row;gap:16px;margin:0 32px;min-width:0}
+  .prov img,.prov img.tall{flex:1 1 0;min-width:0;width:auto;height:75px}
+  .ftr{display:flex;align-items:center;gap:36px;padding:35px 32px;text-align:left}
+  .ftr img{margin:0}
+}
+@media (min-width:900px){
+  .info{max-width:504px}
+  .makes{grid-template-columns:repeat(3,160px);column-gap:35px}
+  .combo-wrap{max-width:568px}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="../shared/data.js"></script>
+<script src="../shared/study.js"></script>
+<script>
+(function () {
+  'use strict';
+  var S = window.Study, st = S.state, esc = S.esc;
+  var app = document.getElementById('app');
+  var A = '../shared/assets/';
+  var LIMIT = 18;
+  var ans = {};
+  var car2 = { make: null, model: null, year: null };
+
+  var ICON = {
+    info: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>',
+    left: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>',
+    right: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>',
+    drop: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>',
+    done: '<svg role="img" aria-label="Done" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#0C6B41" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="20"></circle><polyline points="15 25 21 31 33 18"></polyline></svg>'
+  };
+  var INSURERS = [['Allstate', 'allstate'], ['American Family', 'american-family'], ['Farmers', 'farmers'], ['GEICO', 'geico'], ['Liberty Mutual', 'liberty-mutual'],
+    ['Nationwide', 'nationwide'], ['Progressive', 'progressive'], ['State Farm', 'state-farm'], ['Travelers', 'travelers'], ['USAA', 'usaa'], ['AAA', 'aaa'],
+    ['Erie', 'erie'], ['Esurance', 'esurance'], ['The Hartford', 'the-hartford'], ['Mercury Insurance', 'mercury']];
+  var STATES = 'AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split(' ');
+  var CONSENT_EMAIL = 'By providing information on this or other screens, you agree U.S. News and/or its vendors may use and share such data with insurers and other marketing partners to market to you via email and, if applicable, phone or text. You also agree to the Terms &amp; Conditions and Privacy Policy (including that U.S. News may contact you with offers and may personalize content and ads for you).';
+  var CONSENT_PHONE = 'By clicking “Get my matches,” you represent that you are at least 18 years old, and you consent by electronic signature to being contacted by U.S. News and its third party partners by telephone (via call and/or text), for marketing/telemarketing purposes to discuss your interest, including offers of insurance, at the phone number you provided in this form, even if your phone number is listed on a Federal, State or Company Do Not Call Registry. You further consent that such contact may be made using an automatic telephone dialing system and/or an artificial or prerecorded voice (standard call, text message, and data rates apply). Consent is not required to purchase goods or services and you may revoke consent at any time. You also electronically authorize U.S. News to disclose your responses to its third party partners, who in turn may share your information with their partners, for these purposes. You agree to the U.S. News Terms and Conditions, Privacy Policy and SMS Terms.';
+  var TEST_NOTE = '<p class="test"><b>This is a test.</b> Please don’t type your personal details here. Just press the button below to go on.</p>';
+
+  
+  var two = function () { return st.vehicles === '2+'; };
+  var STEPS = [
+    { id: 'vehicles', pct: 20 }, { id: 'make', pct: 23 },
+    { id: 'model', pct: 27, show: function () { return st.make && st.make !== 'Other'; } },
+    { id: 'year', pct: 30, show: function () { return st.make && st.make !== 'Other'; } },
+    { id: 'make2', pct: 33, show: two },
+    { id: 'model2', pct: 37, show: function () { return two() && car2.make && car2.make !== 'Other'; } },
+    { id: 'year2', pct: 40, show: function () { return two() && car2.make && car2.make !== 'Other'; } },
+    { id: 'insured', pct: 44 }, { id: 'insurer', pct: 48, show: function () { return ans.insured === 'Yes'; } },
+    { id: 'coverage', pct: 51, show: function () { return ans.insured === 'Yes'; } },
+    { id: 'license', pct: 55 }, { id: 'tickets', pct: 58 }, { id: 'driver', pct: 62 }, { id: 'home', pct: 65 },
+    { id: 'bundling', pct: 69, show: function () { return ans.home === 'Yes, I own my home'; } },
+    { id: 'military', pct: 72 }, { id: 'credit', pct: 76 }, { id: 'married', pct: 79 }, { id: 'gender', pct: 83 },
+    { id: 'name', pct: 86 }, { id: 'dob', pct: 89 }, { id: 'address', pct: 93 }, { id: 'email', pct: 96 }, { id: 'phone', pct: 'Last step' },
+    { id: 'end' }
+  ];
+  function idx(id) { for (var i = 0; i < STEPS.length; i++) if (STEPS[i].id === id) return i; return -1; }
+  function visible(s) { return !s.show || s.show(); }
+  function nextStep(id) { for (var i = idx(id) + 1; i < STEPS.length; i++) if (visible(STEPS[i])) return STEPS[i].id; return 'end'; }
+  function prevStep(id) { for (var i = idx(id) - 1; i >= 0; i--) if (visible(STEPS[i])) return STEPS[i].id; return 'vehicles'; }
+
+  
+  function slot() { return /2$/.test(st.step) ? 2 : 1; }
+  function base(step) { return step.replace(/2$/, ''); }
+  function carGet(k) { return slot() === 2 ? car2[k] : st[k]; }
+  function carSet(k, v) {
+    if (slot() === 2) {
+      if (k === 'make' && car2.make !== v) { car2.model = null; car2.year = null; }
+      if (k === 'model' && car2.model !== v) car2.year = null;
+      car2[k] = v;
+    } else if (k === 'make') S.setMake(v); else if (k === 'model') S.setModel(v); else st.year = v;
+  }
+  var MAKE_LIST = S.top12.concat(S.allMakes.filter(function (m) { return S.top12.indexOf(m) === -1; })).concat(['Other']);
+  function answers(k) {
+    if (k === 'model') return S.models(carGet('make'));
+    if (k === 'year') return carGet('model') === 'Other' ? [] : S.years(carGet('make'), carGet('model'));
+    return [];
+  }
+  function current(k) { var v = carGet(k); return v === null || v === undefined ? null : String(v); }
+
+  function combo(k, label) {
+    var val = current(k);
+    return '<div class="combo-wrap' + (k === 'make' ? ' after-makes' : '') + '"><button type="button" class="combo' + (val ? ' has' : '') + '" data-act="menu" data-k="' + k + '" aria-haspopup="listbox" aria-label="' + label + '">' +
+      '<span class="lbl">' + label + '</span>' + (val ? esc(val) : '&#8203;') + ICON.drop + '</button></div>';
+  }
+  function optionGrid(k, label, two) {
+    var all = answers(k), val = current(k);
+    var shown = all.slice(0, LIMIT), box = all.length >= LIMIT;
+    var btn = function (v) { return '<button type="button" class="opt' + (String(v) === val ? ' sel' : '') + '" data-act="pick" data-k="' + k + '" data-v="' + esc(v) + '">' + esc(v) + '</button>'; };
+    return '<div class="opts' + (two ? ' two' : '') + '">' + shown.map(btn).join('') + (box ? '' : btn('Other')) + '</div>' + (box ? combo(k, label) : '');
+  }
+
+  
+  function info(t) { return '<div class="info">' + ICON.info + '<div><b>Why is this asked?</b><p>' + t + '</p></div></div>'; }
+  function tiles(key, items, three) {
+    return '<div class="veh' + (three ? ' three' : '') + '">' + items.map(function (it) {
+      return '<button type="button" class="tile' + (ans[key] === it[0] ? ' sel' : '') + '" data-act="ans" data-key="' + key + '" data-v="' + esc(it[0]) + '">' +
+        (it[1] ? '<img src="' + A + 'icon-' + it[1] + '" alt="">' : '') + '<span>' + esc(it[0]) + '</span></button>';
+    }).join('') + '</div>';
+  }
+  function yesNo(key, icon) { return tiles(key, [['Yes', icon ? icon + '-yes.png' : null], ['No', icon ? icon + '-no.png' : null]]); }
+  function list(key, items) {
+    return '<div class="list">' + items.map(function (o) {
+      return '<button type="button" class="opt' + (ans[key] === o ? ' sel' : '') + '" data-act="ans" data-key="' + key + '" data-v="' + esc(o) + '">' + esc(o) + '</button>';
+    }).join('') + '</div>';
+  }
+  function field(key, label, o) {
+    o = o || {};
+    var v = ans[key] || '';
+    if (o.select) {
+      return '<label class="fld"><select data-key="' + key + '" class="' + (v ? '' : 'empty') + '" aria-label="' + esc(label) + '"><option value="">' + esc(label) + '</option>' +
+        o.select.map(function (s) { return '<option' + (s === v ? ' selected' : '') + '>' + s + '</option>'; }).join('') + '</select></label>';
+    }
+    return '<label class="fld"><input data-key="' + key + '" type="' + (o.type || 'text') + '" inputmode="' + (o.mode || 'text') + '" autocomplete="off"' +
+      (o.max ? ' maxlength="' + o.max + '"' : '') + ' placeholder="' + esc(label) + '" aria-label="' + esc(label) + '" value="' + esc(v) + '"></label>';
+  }
+  function go(label) { return '<button type="button" class="go" data-act="next">' + label + '</button>'; }
+
+  function answered() {
+    var s = st.step, b = base(s);
+    if (s === 'vehicles') return st.vehicles !== null;
+    if (b === 'make' || b === 'model' || b === 'year') return carGet(b) !== null && carGet(b) !== undefined;
+    if (['name', 'dob', 'address', 'email', 'phone'].indexOf(s) !== -1) return true;
+    return !!ans[s === 'insured' ? 'insured' : s];
+  }
+
+  function body() {
+    var s = st.step, b = base(s), who = slot() === 2 ? 'secondary vehicle’s' : (two() ? 'primary vehicle’s' : 'vehicle’s');
+    if (b === 'make') {
+      return '<p class="q big">What is your ' + who + ' make?</p><div class="makes">' + S.top12.map(function (m) {
+        return '<button type="button" class="tile' + (carGet('make') === m ? ' sel' : '') + '" data-act="pick" data-k="make" data-v="' + esc(m) + '" aria-label="' + esc(m) + '">' +
+          '<img src="' + A + 'logo-' + m.toLowerCase() + '.png" alt="' + esc(m) + '" onerror="studyNoLogo(this)"></button>';
+      }).join('') + '</div>' + combo('make', 'Select Make');
+    }
+    if (b === 'model') return '<p class="q big">What is your ' + who + ' model?</p>' + optionGrid('model', 'Select Model', true);
+    if (b === 'year') return '<p class="q big">What is your ' + who.replace('’', '\'') + ' year?</p>' + optionGrid('year', 'Select Year', false);
+    switch (s) {
+      case 'vehicles':
+        return '<h2 class="q">How many vehicles are you interested in insuring?</h2><div class="veh">' +
+          '<button type="button" class="tile' + (st.vehicles === '1' ? ' sel' : '') + '" data-act="veh" data-v="1"><img src="' + A + 'icon-addvehicle-no.png" alt=""><span>1 Vehicle</span></button>' +
+          '<button type="button" class="tile' + (st.vehicles === '2+' ? ' sel' : '') + '" data-act="veh" data-v="2+"><img src="' + A + 'icon-addvehicle-yes.png" alt=""><span>2+ Vehicles</span></button>' +
+          '</div>' + info('You may be eligible for a discount.');
+      case 'insured': return '<p class="q big">Are you currently insured?</p>' + yesNo('insured', 'insured');
+      case 'insurer':
+        return '<p class="q big">Who is your current insurer?</p><div class="makes ins">' + INSURERS.map(function (i) {
+          return '<button type="button" class="tile' + (ans.insurer === i[0] ? ' sel' : '') + '" data-act="ans" data-key="insurer" data-v="' + esc(i[0]) + '" aria-label="' + esc(i[0]) + '">' +
+            '<img src="' + A + 'ins-' + i[1] + '.png" alt="' + esc(i[0]) + '" onerror="studyNoLogo(this)"></button>';
+        }).join('') + '<button type="button" class="tile' + (ans.insurer === 'Other' ? ' sel' : '') + '" data-act="ans" data-key="insurer" data-v="Other"><span class="txt">Other</span></button></div>';
+      case 'coverage': return '<p class="q big">How long have you continuously had auto insurance?</p>' + list('coverage', ['0 - 5 months', '6 months - 1 year', '1 - 2 years', '2 - 3 years', '3+ years']);
+      case 'license': return '<p class="q big">Do you have a valid driver\'s license?</p>' + tiles('license', [['Yes', 'license-yes.svg'], ['No', 'license-no.png']]) + info('License status plays a role in your rate.');
+      case 'tickets': return '<p class="q big">Any Accidents or Tickets in the Past 3 Years?</p>' + yesNo('tickets', 'accidents') + info('Driving history plays a role in your rate.');
+      case 'driver': return '<p class="q big">Would you like to add another driver?</p>' + yesNo('driver', 'driver');
+      case 'home': return '<p class="q big">Do you own your home?</p>' + tiles('home', [['Yes, I own my home', 'home-yes.png'], ['No', 'home-no.svg']]) + info('You may be eligible for discounts');
+      case 'bundling': return '<p class="q big">Are you interested in bundling auto and home insurance?</p>' + yesNo('bundling') + info('You may qualify for extra savings or discounts.');
+      case 'military': return '<p class="q big">Have you (or anyone in your household) served in the U.S. military?</p>' + yesNo('military', 'military') + info('You may be eligible for discounts');
+      case 'credit': return '<p class="q big">What is your credit score?</p>' + list('credit', ['Excellent', 'Good', 'Average', 'Below Average', 'Poor']) + info('If you\'re not sure, please make your best guess');
+      case 'married': return '<p class="q big">Are you married?</p>' + yesNo('married', 'married') + info('You may be eligible for discounts.');
+      case 'gender':
+        return '<p class="q big">What is your gender?</p>' + tiles('gender', [['Male', 'gender-male.png'], ['Female', 'gender-female.png'], ['Prefer Not to Answer', 'gender-na.png']], true) +
+          info('Gender is one factor some carriers use to calculate rates. Selecting \'Prefer Not to Answer\' is always an option and won\'t affect the number of offers you see.');
+      case 'name':
+        return '<h1 class="q big">What is your first and last name?</h1><div class="form">' + TEST_NOTE + field('first', 'Enter your first name *') + field('last', 'Enter your last name *') + go('Continue') + '</div>';
+      case 'dob':
+        return '<h1 class="q big">What is your date of birth?</h1><div class="form">' + TEST_NOTE + field('dob', 'MM/DD/YYYY', { mode: 'numeric', max: 10 }) + go('Continue') + '</div>' +
+          info('Your age helps to determine rates and any eligible discounts.');
+      case 'address':
+        return '<h1 class="q big">What is your full address?</h1><div class="form">' + TEST_NOTE + field('address', 'Address *') + field('apt', 'Apt/Unit') + field('city', 'City *') +
+          '<div class="frow">' + field('state', 'State *', { select: STATES }) + field('zip', 'Zip Code *', { mode: 'numeric', max: 5 }) + '</div>' + go('Continue') + '</div>';
+      case 'email':
+        return '<h1 class="q big">What is your email address?</h1><div class="form">' + TEST_NOTE + field('email', 'Email *', { type: 'email', mode: 'email' }) + go('Continue') +
+          '<p class="legal">' + CONSENT_EMAIL + '</p></div>';
+      case 'phone':
+        return '<p class="kick">Last Step! Complete the form below to view your matches.</p><h1 class="q big">What is your phone number?</h1><div class="form">' + TEST_NOTE +
+          field('phone', 'Phone Number', { type: 'tel', mode: 'tel' }) + go('See My Matches') +
+          '<button type="button" class="decline" data-act="skip-phone">Decline to share phone number</button><p class="legal">' + CONSENT_PHONE + '</p></div>' +
+          info('Your phone number helps us provide accurate and faster quotes.');
+    }
+    return '';
+  }
+
+  function header() {
+    return '<header class="hdr"><img src="' + A + 'usnews-logo.svg" alt="U.S. News and World Report Logo"><i></i><p>Get fast, cheap car insurance quotes with one simple form.</p></header>';
+  }
+  function footer() {
+    return '<footer class="ftr"><img src="' + A + 'usnews-logo.svg" alt=""><div>Copyright 2026 © U.S. News &amp; World Report L.P. <span>Terms &amp; Conditions/Privacy Policy/U.S. State Privacy Notice/Your Privacy Choices</span></div></footer>';
+  }
+  function page() {
+    if (st.step === 'end') {
+      return '<div class="page">' + header() + '<main class="main"><div class="done">' + ICON.done + '<h2 class="q">That is the end of the test.</h2>' +
+        '<p>In the real form, your matches would show here.</p><p>Nothing you entered here was saved or sent.</p>' +
+        '<button type="button" data-act="again">Start again</button>' + S.debugBlock() + '</div></main>' + footer() + '</div>';
+    }
+    var p = STEPS[idx(st.step)].pct, num = typeof p === 'number' ? p : 98, label = typeof p === 'number' ? p + '% completed' : p;
+    return '<div class="page">' + header() +
+      '<div class="band"><div class="band-in"><p class="sav">Drivers can save up to $2,039 per year when comparing rates.</p>' +
+      '<div class="track" role="progressbar" aria-valuenow="' + num + '" aria-valuemin="0" aria-valuemax="100"><div class="fill" style="width:' + num + '%"></div></div>' +
+      '<p class="pct">' + label + '</p></div></div>' +
+      '<main class="main">' + body() +
+      '<div class="nav"><button type="button" class="prev" data-act="prev"' + (st.step === 'vehicles' ? ' disabled' : '') + '>' + ICON.left + 'Previous</button>' +
+      '<button type="button" class="next" data-act="next"' + (answered() ? '' : ' disabled') + '>Next' + ICON.right + '</button></div>' +
+      '<div class="prov"><p>Providers Include</p><div class="logos">' +
+      '<img src="' + A + 'logo-gray-state-farm.png" alt="State Farm"><img src="' + A + 'logo-gray-liberty-mutual.png" alt="Liberty Mutual">' +
+      '<img src="' + A + 'logo-gray-progressive.png" alt="Progressive"><img class="tall" src="' + A + 'logo-gray-farmers.png" alt="Farmers Insurance"></div><p>+25 More</p></div>' +
+      '</main>' + footer() + '</div>';
+  }
+
+  window.studyNoLogo = function (img) {
+    var s = document.createElement('span');
+    s.className = 'noimg';
+    s.textContent = img.alt;
+    img.parentNode.replaceChild(s, img);
+  };
+
+  function pick(k, v, how) {
+    var from = st.step;
+    carSet(k, k === 'year' && v !== 'Other' ? Number(v) : v);
+    S.log('answer ' + from, v + ' (' + how + ')');
+    S.go(nextStep(from), how);
+  }
+
+  
+  var openMenu = null;
+  function closeMenu() {
+    if (!openMenu) return;
+    openMenu.back.remove(); openMenu.menu.remove();
+    openMenu.btn.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', openMenu.key);
+    openMenu.btn.focus();
+    openMenu = null;
+  }
+  function showMenu(btn) {
+    var k = btn.getAttribute('data-k');
+    var items = k === 'make' ? MAKE_LIST : answers(k).map(String).concat(['Other']);
+    var val = current(k);
+    var back = document.createElement('div'); back.className = 'menu-back';
+    var menu = document.createElement('div'); menu.className = 'menu'; menu.setAttribute('role', 'listbox');
+    menu.innerHTML = items.map(function (n) {
+      return '<button type="button" role="option" aria-selected="' + (n === val) + '"' + (n === val ? ' class="cur"' : '') + ' data-v="' + esc(n) + '">' + esc(n) + '</button>';
+    }).join('');
+    document.body.appendChild(back); document.body.appendChild(menu);
+    document.body.style.overflow = 'hidden';
+    btn.classList.add('open');
+    var r = btn.getBoundingClientRect(), vh = window.innerHeight, vw = window.innerWidth;
+    menu.style.maxHeight = (vh - 96) + 'px';
+    var h = menu.offsetHeight, w = menu.offsetWidth;
+    var anchor = menu.querySelector('.cur') || menu.firstChild;
+    var mid = r.top + r.height / 2;
+    var want = mid - (anchor.offsetTop + anchor.offsetHeight / 2);
+    var top = Math.max(16, Math.min(want, vh - 16 - h));
+    menu.style.top = top + 'px';
+    menu.style.left = Math.max(16, Math.min(r.left + r.width / 2 - w / 2, vw - 16 - w)) + 'px';
+    menu.scrollTop = Math.max(0, anchor.offsetTop + anchor.offsetHeight / 2 - (mid - top));
+    var key = function (e) { if (e.key === 'Escape') closeMenu(); };
+    document.addEventListener('keydown', key);
+    openMenu = { back: back, menu: menu, btn: btn, key: key };
+    S.log('opened list', btn.getAttribute('aria-label'));
+    back.addEventListener('click', function () { S.log('closed list without choosing'); closeMenu(); });
+    menu.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      var v = b.getAttribute('data-v');
+      closeMenu();
+      pick(k, v, 'list');
+    });
+    anchor.focus({ preventScroll: true });
+  }
+
+  function dobMask(v) {
+    var d = v.replace(/\D/g, '').slice(0, 8);
+    if (d.length < 3) return d;
+    if (d.length < 5) return d.slice(0, 2) + '/' + d.slice(2);
+    return d.slice(0, 2) + '/' + d.slice(2, 4) + '/' + d.slice(4);
+  }
+  function phoneMask(v) {
+    var d = v.replace(/\D/g, '').slice(0, 10);
+    if (d.length < 4) return d;
+    if (d.length < 7) return '(' + d.slice(0, 3) + ') ' + d.slice(3);
+    return '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+  }
+  app.addEventListener('input', function (e) {
+    var t = e.target, key = t.getAttribute('data-key'); if (!key) return;
+    if (key === 'phone') { var m = phoneMask(t.value); if (m !== t.value) t.value = m; }
+    if (key === 'dob') { var d = dobMask(t.value); if (d !== t.value) t.value = d; }
+    if (key === 'zip') { var z = t.value.replace(/\D/g, ''); if (z !== t.value) t.value = z; }
+    ans[key] = t.value;
+  });
+  app.addEventListener('change', function (e) {
+    var k = e.target.getAttribute('data-key'); if (!k) return;
+    ans[k] = e.target.value;
+    if (e.target.tagName === 'SELECT') e.target.classList.toggle('empty', !e.target.value);
+  });
+  app.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && e.target.matches('.fld input')) { var g = app.querySelector('.go'); if (g) { e.preventDefault(); g.click(); } }
+  });
+  app.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]'); if (!b || b.disabled) return;
+    var act = b.getAttribute('data-act'), v = b.getAttribute('data-v');
+    switch (act) {
+      case 'veh': st.vehicles = v; S.log('answer vehicles', v); S.go(nextStep('vehicles'), 'tile'); break;
+      case 'pick': pick(b.getAttribute('data-k'), v, 'button'); break;
+      case 'ans': var key = b.getAttribute('data-key'), from = st.step; ans[key] = v; S.log('answer ' + key, v); S.go(nextStep(from), 'button'); break;
+      case 'menu': showMenu(b); break;
+      case 'prev': S.back(prevStep(st.step), 'Previous'); break;
+      case 'next': S.log('continue', st.step); S.go(nextStep(st.step), b.classList.contains('go') ? b.textContent : 'Next'); break;
+      case 'skip-phone': ans.phone = ''; S.log('declined phone'); S.go('end', 'no phone'); break;
+      case 'again': ans = {}; car2 = { make: null, model: null, year: null }; S.restart(); break;
+    }
+  });
+
+  var baseDebug = S.debugBlock;
+  S.debugBlock = function () {
+    if (!S.debug) return '';
+    return baseDebug() + '<pre style="margin:12px 0 0;padding:12px;background:#F4F7F9;border-radius:4px;font:12px/18px monospace;text-align:left;white-space:pre-wrap">' +
+      esc('Second car: ' + JSON.stringify(car2) + '\nOther answers: ' + JSON.stringify(ans, null, 1)) + '</pre>';
+  };
+
+  S.start(function (why) {
+    closeMenu();
+    app.innerHTML = page();
+    if (st.step === 'end' || (st.step === 'vehicles' && why === 'go')) window.scrollTo(0, 0);
+  });
+})();
+</script>
+</body>
+</html>
