@@ -334,8 +334,8 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
   }
   function page() {
     if (st.step === 'end') {
-      return '<div class="page">' + header() + '<main class="main"><div class="done">' + ICON.done + '<h2 class="q">That is the end of the test.</h2>' +
-        '<p>In the real form, your matches would show here.</p><p>Nothing you entered here was saved or sent.</p>' +
+      return '<div class="page">' + header() + '<main class="main"><div class="done">' + ICON.done + '<h2 class="q">That is the end of this form.</h2>' +
+        '<p><b>Please go back to your test instructions and continue with the next task.</b></p><p>In the real form, your matches would show here. Nothing you entered was saved or sent.</p>' +
         '<button type="button" data-act="again">Start again</button>' + S.debugBlock() + '</div></main>' + footer() + '</div>';
     }
     var p = STEPS[idx(st.step)].pct, num = typeof p === 'number' ? p : 98, label = typeof p === 'number' ? p + '% completed' : p;
