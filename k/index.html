@@ -324,7 +324,7 @@ h2{margin:34px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:22px;line-h
   }
   function card() {
     if (st.step === 'end') {
-      return '<div class="done">' + ICON.done + '<h2>That is the end of the test.</h2><p>In the real form, your matches would show here.</p><p>Nothing you entered here was saved or sent.</p>' +
+      return '<div class="done">' + ICON.done + '<h2>That is the end of this form.</h2><p><b>Please go back to your test instructions and continue with the next task.</b></p><p>In the real form, your matches would show here. Nothing you entered was saved or sent.</p>' +
         '<button type="button" class="again" data-act="again">Start again</button>' + S.debugBlock() + '</div>';
     }
     return head() + body() + nav();
