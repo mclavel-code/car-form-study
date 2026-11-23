@@ -31,7 +31,9 @@ h2{margin:34px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:22px;line-h
 .kick + h2{margin-top:8px}
 .sub{margin:10px 0 0;font-size:16px;line-height:24px;color:#515767}
 .test{margin:16px 0 0;padding:10px 14px;border-radius:8px;background:#FFF6E0;border:1px solid #E8C56A;font-size:14px;line-height:20px;color:#5C4400}
-.legal{margin:16px 0 0;font-size:12px;line-height:17px;color:#515767}
+.legal{margin:46px 0 0;font-size:12px;line-height:16px;color:#515767}
+.legal u{color:#1263D3;text-decoration:none}
+.fields .go{margin-top:0}
 
 
 .combo{position:relative;margin-top:24px;margin-bottom:20px}
@@ -66,15 +68,25 @@ h2{margin:34px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:22px;line-h
 
 
 .fields{display:flex;flex-direction:column;gap:16px;margin-top:24px}
-.frow{display:flex;gap:12px}
-.fld{position:relative;flex:1 1 0;min-width:0}
-.fld input,.fld select{width:100%;height:56px;padding:16.5px 14px;border:1px solid rgba(44,48,60,.32);border-radius:16px;background:#fff;font-size:16px;color:#2C303C}
-.fld select{appearance:none;-webkit-appearance:none;color:#2C303C}
-.fld select.empty{color:#515767}
-.fld input::placeholder{color:#515767;opacity:1}
-.fld input:focus,.fld select:focus{border:2px solid #1263D3;padding:15.5px 13px;outline:none}
-.fld .float{position:absolute;left:12px;top:-8px;padding:0 4px;background:#fff;font-size:12px;line-height:16px;color:#515767;pointer-events:none}
-.go{display:flex;align-items:center;justify-content:center;width:100%;min-height:44px;margin-top:20px;padding:8px 22px;border:0;border-radius:4px;background:#1263D3;font-size:16px;font-weight:500;color:#fff;cursor:pointer}
+.fields.dob{padding:0 8px}
+.fields.email{max-width:560px}
+.frow{display:flex;gap:16px}
+.frow.stack{flex-direction:column}
+.frow.stack .fld{flex:none}
+.fld{position:relative;display:block;flex:1 1 0;min-width:0}
+.fld input,.fld select{position:relative;z-index:1;display:block;width:100%;height:56px;margin:0;padding:16.5px 14px;border:0;border-radius:16px;background:transparent;font-size:16px;line-height:23px;color:#2C303C;outline:0}
+.fld select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='%23757575'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 7px center;cursor:pointer}
+.fld input::placeholder{color:#515767;opacity:0;transition:opacity .15s}
+.fld input:focus::placeholder{opacity:1}
+.fld .lab{position:absolute;z-index:2;left:14px;top:16px;max-width:calc(100% - 24px);font-size:16px;line-height:23px;color:#515767;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none;transform-origin:left top;transition:transform .15s,color .15s}
+.fld input:focus ~ .lab,.fld input:not(:placeholder-shown) ~ .lab,.fld select:focus ~ .lab,.fld select:not(.empty) ~ .lab{transform:translateY(-25px) scale(.75);max-width:calc(133% - 32px)}
+.fld input:focus ~ .lab,.fld select:focus ~ .lab{color:#1263D3}
+.fld fieldset{position:absolute;top:-5px;right:0;bottom:0;left:0;min-width:0;margin:0;padding:0 8px;border:1px solid rgba(0,0,0,.23);border-radius:16px;pointer-events:none}
+.fld legend{display:block;width:auto;max-width:.01px;height:11px;padding:0;font-size:12px;line-height:11px;white-space:nowrap;overflow:hidden;visibility:hidden}
+.fld legend span{display:inline-block;padding:0 5px}
+.fld input:focus ~ fieldset legend,.fld input:not(:placeholder-shown) ~ fieldset legend,.fld select:focus ~ fieldset legend,.fld select:not(.empty) ~ fieldset legend{max-width:100%}
+.fld input:focus ~ fieldset,.fld select:focus ~ fieldset{border:2px solid #1263D3}
+.go{display:flex;align-items:center;justify-content:center;width:100%;min-height:40px;margin-top:16px;padding:8px 22px;border:0;border-radius:4px;background:#1263D3;font-size:16px;font-weight:500;color:#fff;cursor:pointer}
 .go:disabled{background:rgba(44,48,60,.12);color:rgba(44,48,60,.38);cursor:default}
 .decline{align-self:center;margin-top:12px;padding:8px;border:0;background:none;font-size:15px;font-weight:500;color:#0258A3;text-decoration:underline;cursor:pointer}
 
@@ -121,6 +133,14 @@ h2{margin:34px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:22px;line-h
   .sav{font-size:18px;line-height:24.3px}
   h2{font-size:32px;line-height:40px}
 }
+@media (min-width:900px){
+  .fields.dob{max-width:430px}
+  .frow.stack{flex-direction:row;gap:8px}
+  .frow.stack .fld{flex:1 1 0}
+  .frow.stack .fld.wide{flex:495 1 0}
+  .frow.stack .fld.narrow{flex:160 1 0}
+  .fields.email + .legal{max-width:560px}
+}
 </style>
 </head>
 <body>
@@ -152,7 +172,7 @@ h2{margin:34px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:22px;line-h
     ['Erie', 'erie'], ['Esurance', 'esurance'], ['The Hartford', 'the-hartford'], ['Mercury', 'mercury']];
   var INS_LOGO = {}; INSURERS.forEach(function (i) { INS_LOGO[i[0]] = i[1]; });
   var STATES = 'AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY'.split(' ');
-  var CONSENT_EMAIL = 'By providing information on this or other screens, you agree U.S. News and/or its vendors may use and share such data with insurers and other marketing partners to market to you via email and, if applicable, phone or text. You also agree to the Terms &amp; Conditions and Privacy Policy (including that U.S. News may contact you with offers and may personalize content and ads for you).';
+  var CONSENT_EMAIL = 'U.S. News and its vendors may disclose your responses to the insurer you select and to up to 4 other insurers (or their agents) and/or <u>insurance marketing companies</u> so they can market to you. U.S. News also may use your information to provide you personalized offers, content and ads. By continuing, you agree to the <u>Terms</u> and <u>Privacy Policy.</u> Information provided may become part of an application and serve as a basis for a quote not appearing. Coverages, discounts and companies/agents are not available in all states. U.S. News is not licensed to sell insurance.';
   var CONSENT_PHONE = 'By clicking “Get my matches,” you represent that you are at least 18 years old, and you consent by electronic signature to being contacted by U.S. News and its third party partners by telephone (via call and/or text), for marketing/telemarketing purposes to discuss your interest, including offers of insurance, at the phone number you provided in this form, even if your phone number is listed on a Federal, State or Company Do Not Call Registry. You further consent that such contact may be made using an automatic telephone dialing system and/or an artificial or prerecorded voice (standard call, text message, and data rates apply). Consent is not required to purchase goods or services and you may revoke consent at any time. You also electronically authorize U.S. News to disclose your responses to its third party partners, who in turn may share your information with their partners, for these purposes. You agree to the U.S. News Terms and Conditions, Privacy Policy and SMS Terms.';
   var TEST_NOTE = '<p class="test"><b>This is a test.</b> Please type the made-up details from your test instructions, not your own. Nothing here is saved or sent.</p>';
 
@@ -170,7 +190,7 @@ h2{margin:34px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:22px;line-h
     { id: 'license', pct: 55 }, { id: 'tickets', pct: 58 }, { id: 'driver', pct: 62 }, { id: 'home', pct: 65 },
     { id: 'bundling', pct: 69, show: function () { return ans.home === 'Yes, I own my home'; } },
     { id: 'military', pct: 72 }, { id: 'credit', pct: 76 }, { id: 'married', pct: 79 }, { id: 'gender', pct: 83 },
-    { id: 'name', pct: 86 }, { id: 'dob', pct: 89 }, { id: 'address', pct: 93 }, { id: 'email', pct: 96 }, { id: 'phone', pct: 'Last step' },
+    { id: 'name', pct: 86 }, { id: 'dob', pct: 90 }, { id: 'address', pct: 93 }, { id: 'email', pct: 97 }, { id: 'phone', pct: 'Last step' },
     { id: 'end' }
   ];
   function idx(id) { for (var i = 0; i < STEPS.length; i++) if (STEPS[i].id === id) return i; return -1; }
@@ -249,12 +269,13 @@ h2{margin:34px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:22px;line-h
   function field(key, label, o) {
     o = o || {};
     var v = ans[key] || '';
+    var frame = '<span class="lab">' + esc(label) + '</span><fieldset aria-hidden="true"><legend><span>' + esc(label) + '</span></legend></fieldset>';
     if (o.select) {
-      return '<label class="fld"><select data-key="' + key + '" class="' + (v ? '' : 'empty') + '" aria-label="' + esc(label) + '"><option value="">' + esc(label) + '</option>' +
-        o.select.map(function (s) { return '<option' + (s === v ? ' selected' : '') + '>' + s + '</option>'; }).join('') + '</select></label>';
+      return '<div class="fld' + (o.cls ? ' ' + o.cls : '') + '"><select data-key="' + key + '" class="' + (v ? '' : 'empty') + '" aria-label="' + esc(label) + '"><option value=""></option>' +
+        o.select.map(function (s) { return '<option' + (s === v ? ' selected' : '') + '>' + s + '</option>'; }).join('') + '</select>' + frame + '</div>';
     }
-    return '<label class="fld"><input data-key="' + key + '" type="' + (o.type || 'text') + '" inputmode="' + (o.mode || 'text') + '" autocomplete="' + (o.ac || 'off') + '"' +
-      (o.max ? ' maxlength="' + o.max + '"' : '') + ' placeholder="' + esc(label) + '" aria-label="' + esc(label) + '" value="' + esc(v) + '"></label>';
+    return '<div class="fld' + (o.cls ? ' ' + o.cls : '') + '"><input data-key="' + key + '" type="' + (o.type || 'text') + '" inputmode="' + (o.mode || 'text') + '" autocomplete="off"' +
+      (o.max ? ' maxlength="' + o.max + '"' : '') + ' placeholder="' + esc(o.ph || ' ') + '" aria-label="' + esc(label) + '" value="' + esc(v) + '">' + frame + '</div>';
   }
   var NEED = { name: ['first', 'last'], dob: ['dob'], address: ['address', 'city', 'state', 'zip'], email: ['email'], phone: [] };
   function filled(step) { return true; }
@@ -304,21 +325,21 @@ h2{margin:34px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:22px;line-h
         return q('What is your gender?') + sub('Gender is one factor some carriers use to calculate rates. Selecting \'Prefer Not to Answer\' is always an option and won\'t affect the number of offers you see.') +
           choice('gender', [['Male', 'gender-male.png'], ['Female', 'gender-female.png'], ['Prefer Not to Answer', 'gender-na.png']], 'yn');
       case 'name':
-        return q('What is your first and last name?') + TEST_NOTE + '<div class="fields">' + field('first', 'Enter your first name *', { ac: 'given-name' }) +
-          field('last', 'Enter your last name *', { ac: 'family-name' }) + '</div>' + go('Continue');
+        return q('What is your first and last name?') + TEST_NOTE + '<div class="fields">' + field('first', 'Enter your first name *') + field('last', 'Enter your last name *') + '</div>' + go('Continue');
       case 'dob':
         return q('What is your date of birth?') + sub('Your age helps to determine rates and any eligible discounts.') + TEST_NOTE +
-          '<div class="fields">' + field('dob', 'MM/DD/YYYY', { mode: 'numeric', ac: 'bday', max: 10 }) + '</div>' + go('Continue');
+          '<div class="fields dob"><div class="frow">' + field('dobM', 'Month *', { ph: 'MM', mode: 'numeric', max: 2 }) + field('dobD', 'Day *', { ph: 'DD', mode: 'numeric', max: 2 }) + field('dobY', 'Year *', { ph: 'YYYY', mode: 'numeric', max: 4 }) + '</div>' + go('Continue') + '</div>';
       case 'address':
-        return q('What is your full address?') + TEST_NOTE + '<div class="fields">' + field('address', 'Address *', { ac: 'address-line1' }) + field('apt', 'Apt/Unit', { ac: 'address-line2' }) +
-          field('city', 'City *', { ac: 'address-level2' }) + '<div class="frow">' + field('state', 'State *', { select: STATES }) + field('zip', 'Zip Code *', { mode: 'numeric', ac: 'postal-code', max: 5 }) + '</div></div>' + go('Continue');
+        return q('What is your full address?') + TEST_NOTE + '<div class="fields">' + '<div class="frow stack">' + field('address', 'Address *', { ph: 'Enter the street address', cls: 'wide' }) + field('apt', 'Apt/Unit', { ph: 'Apt/Unit', cls: 'narrow' }) + '</div>' +
+          field('city', 'City *', { ph: 'Enter the city name' }) +
+          '<div class="frow stack">' + field('state', 'State *', { select: STATES }) + field('zip', 'Zip Code *', { ph: 'Enter your 5-digit zip code', mode: 'numeric', max: 5 }) + '</div>' + '</div>' + go('Continue');
       case 'email':
-        return q('What is your email address?') + TEST_NOTE + '<div class="fields">' + field('email', 'Email *', { type: 'email', mode: 'email', ac: 'email' }) + '</div>' + go('Continue') +
+        return q('What is your email address?') + TEST_NOTE + '<div class="fields email">' + field('email', 'Email Address *', { type: 'email', mode: 'email', ph: 'Enter your email address' }) + go('Continue') + '</div>' +
           '<p class="legal">' + CONSENT_EMAIL + '</p>';
       case 'phone':
         return '<p class="kick">Last Step! Complete the form below to view your matches.</p>' + q('What is your phone number?') + sub('Your phone number helps us provide accurate and faster quotes.') + TEST_NOTE +
-          '<div class="fields">' + field('phone', 'Phone Number', { type: 'tel', mode: 'tel', ac: 'tel' }) + '</div>' + go('See My Matches') +
-          '<button type="button" class="decline" data-act="skip-phone">Decline to share phone number</button><p class="legal">' + CONSENT_PHONE + '</p>';
+          '<div class="fields">' + field('phone', 'Phone Number', { type: 'tel', mode: 'tel' }) + '</div>' + go('See My Matches') +
+          '<button type="button" class="decline" data-act="skip-phone">Decline to share phone number</button><p class="legal" style="margin-top:16px">' + CONSENT_PHONE + '</p>';
     }
     return '';
   }
@@ -383,9 +404,9 @@ h2{margin:34px 0 0;font-family:Montserrat,Arial,sans-serif;font-size:22px;line-h
     }
     var key = t.getAttribute('data-key'); if (!key) return;
     if (key === 'phone') { var m = phoneMask(t.value); if (m !== t.value) t.value = m; }
-    if (key === 'dob') { var d = dobMask(t.value); if (d !== t.value) t.value = d; }
-    if (key === 'zip') { var z = t.value.replace(/\D/g, ''); if (z !== t.value) t.value = z; }
+    if (key === 'dobM' || key === 'dobD' || key === 'dobY' || key === 'zip') { var z = t.value.replace(/\D/g, ''); if (z !== t.value) t.value = z; }
     ans[key] = t.value;
+    if ((key === 'dobM' || key === 'dobD') && t.value.length === 2) { var nx = app.querySelector('[data-key="' + (key === 'dobM' ? 'dobD' : 'dobY') + '"]'); if (nx) nx.focus(); }
     refreshButtons();
   });
   app.addEventListener('change', function (e) {
